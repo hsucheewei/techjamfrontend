@@ -1,36 +1,50 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Tech Jam Project
+
+This repository contains a Next.js project configured to run in a Docker container for seamless development and deployment.
+
+## Prerequisites
+
+Before you begin, ensure you have met the following requirements:
+
+- Docker and Docker Compose are installed on your machine.
+- Git is installed on your machine.
 
 ## Getting Started
 
-First, run the development server:
+Follow these steps to get your development environment up and running.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+### Clone the Repository
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+1. Open your terminal.
+2. Run the following command to clone the repository:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+   ```bash
+   git clone https://github.com/your-username/tech-jam.git
+    ```
+3. Navigate to the project directory 
+    ```bash
+    cd techjamfrontend
+    ```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+### Configure Enviroment Variables
 
-## Learn More
+1. Create a '.env' file in the root directory
+2. Add any neccesary env variables like
+    ```env
+    OPENAI_API_KEY=your_openai_api_key
+    ```
 
-To learn more about Next.js, take a look at the following resources:
+### Build and Run the Docker Container
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Build the docker container
+    ```bash
+    docker-compose build
+    ```
+2. Run the docker container
+    ```bash
+    docker-compose up
+    ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+#### Access the Application
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Once the container is running you can access it at: http://localhost:3000
