@@ -6,8 +6,8 @@ This repository contains a Next.js project configured to run in a Docker contain
 
 Before you begin, ensure you have met the following requirements:
 
-- Docker and Docker Compose are installed on your machine.
-- Git is installed on your machine.
+- [Docker](https://docs.docker.com/get-docker/) and [Docker Compose](https://docs.docker.com/compose/install/) are installed on your machine.
+- [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) is installed on your machine.
 
 ## Getting Started
 
