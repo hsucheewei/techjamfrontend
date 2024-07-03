@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@ai-sdk/openai": "^0.0.34",
     "@gptscript-ai/gptscript": "^0.9.1",
     "@shadcn/ui": "^0.0.4",
     "ai": "^3.2.16",

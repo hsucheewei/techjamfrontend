@@ -1,63 +1,67 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { Configuration, OpenAIApi } from 'openai-edge';
+import { createOpenAI } from '@ai-sdk/openai';
+import { generateText } from 'ai';
 
-const config = new Configuration({
+const openai = createOpenAI({
   apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
+  compatibility: 'strict',
 });
-const openai = new OpenAIApi(config);
 
 export const runtime = 'edge';
 
-// Mock function to fetch products (replace with actual API call later)
-async function fetchProducts(query: string) {
-  // For testing, return mock data
-  return [
-    { name: "Laptop", price: 999 },
-    { name: "Smartphone", price: 699 },
-    { name: "Headphones", price: 199 },
-  ];
+const promptTemplate = `
+You are an AI shopping assistant. Your task is to recommend products based on the user's profile and purchase history. 
+
+Given the following information:
+- Age: {age}
+- Gender: {gender}
+- Location: {location}
+- Purchase History: {purchase_history}
+- Price Range: {price_range}
+- Product Categories: {categories}
+
+Please provide product recommendations in the following JSON format:
+
+json
+{
+  "products": [
+    {
+      "name": "Product Name",
+      "price": 00.00,
+      "category": "Category",
+      "link": "https://example.com/product"
+    },
+    // ... more products
+  ]
 }
+
+Provide 5 product recommendations that best fit the user's profile and preferences. Ensure all fields are filled for each product.
+`;
 
 export async function POST(req: NextRequest) {
   try {
-    const { messages } = await req.json();
-    const userMessage = messages[messages.length - 1].content;
+    const { age, gender, location, purchaseHistory, priceRange, categories } = await req.json();
 
-    console.log('User message:', userMessage);
+    console.log('Received request with the following data:', { age, gender, location, purchaseHistory, priceRange, categories });
 
-    // Fetch relevant products based on user query
-    const products = await fetchProducts(userMessage);
+    const filledPrompt = promptTemplate
+      .replace('{age}', age)
+      .replace('{gender}', gender)
+      .replace('{location}', location)
+      .replace('{purchaseHistory}', purchaseHistory)
+      .replace('{priceRange}', priceRange)
+      .replace('{categories}', categories);
 
-    console.log('Fetched products:', products);
+    console.log('Filled prompt:', filledPrompt);
 
-    // Format the product list
-    const formattedProducts = products.map((product: any, index: number) => ({
-      id: index + 1,
-      name: product.name,
-      price: product.price,
-    }));
-
-    // Generate AI response
-    const aiResponse = await openai.createChatCompletion({
-      model: 'gpt-3.5-turbo',
-      messages: [
-        ...messages,
-        { role: 'system', content: `Please provide a brief recommendation based on these products: ${JSON.stringify(formattedProducts)}` },
-      ],
+    const { text } = await generateText({
+      model: openai('gpt-3.5-turbo'),
+      prompt: filledPrompt,
     });
 
-    const aiResponseData = await aiResponse.json();
-    console.log('AI response:', aiResponseData);
+    console.log('Generated text:', text);
 
-    const aiMessage = aiResponseData.choices[0].message?.content || "I'm sorry, I couldn't generate a recommendation.";
-
-    // Prepare the response
-    const responseData = {
-      products: formattedProducts,
-      aiMessage: aiMessage,
-    };
-
-    return NextResponse.json(responseData);
+    return NextResponse.json({ text });
   } catch (error: any) {
     console.error('API route error:', error);
     return NextResponse.json({ error: error.message || 'An unexpected error occurred' }, { status: 500 });
