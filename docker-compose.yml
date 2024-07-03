@@ -1,14 +1,29 @@
-version: '3'
+version: '3.8'
 
 services:
   app:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - "3000:3000"
+    build: .
+    container_name: techjamfrontend_app
     environment:
       - NODE_ENV=development
+    env_file:
+      - .env.local
     volumes:
-      - .:/app
-    command: npm run dev
+      - ./:/usr/src/app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+
+  db:
+    image: postgres:13
+    container_name: techjamfrontend_db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=techjam
+    volumes:
+      - db_data:/var/lib/postgresql/data
+
+volumes:
+  db_data:
