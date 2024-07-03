@@ -31,7 +31,7 @@ Follow these steps to get your development environment up and running.
 1. Create a '.env' file in the root directory
 2. Add any neccesary env variables like
     ```env
-    OPENAI_API_KEY=your_openai_api_key
+    NEXT_PUBLIC_OPENAI_API_KEY="NEXT_PUBLIC_OPENAI_API_KEY"
     ```
 
 ### Build and Run the Docker Container
