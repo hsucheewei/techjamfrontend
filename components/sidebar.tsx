@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import filterlogo from '../src/assets/images/filtericon.png';
 import FilterPage from './filter-page';
+import Image from 'next/image';
 
 export const Sidebar = () => {
   const [isFilterVisible, setIsFilterVisible] = useState(false);
@@ -15,7 +16,7 @@ export const Sidebar = () => {
     <div>
       <aside className="p-4 bg-black text-white flex justify-end items-center">
         <button onClick={toggleFilter} className="px-4 py-2 text-white rounded-md flex items-center">
-          <img src={filterlogo} alt="Filter Logo" className="h-8 w-8 mr-2 object-contain" />
+          <Image src={filterlogo} width={0} height={0} alt="Filter Logo" className="h-8 w-8 mr-2 object-contain" />
         </button>
       </aside>
 
