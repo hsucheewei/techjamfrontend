@@ -45,8 +45,8 @@ const TestingPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-gray-100">
-      <div className="w-full max-w-4xl p-6 bg-white rounded shadow">
+    <div className="flex flex-col items-center justify-center min-h-screen py-2 bg-black-100">
+      <div className="w-full max-w-4xl p-6 bg-black rounded shadow">
         <h1 className="mb-4 text-2xl font-bold">Shopping Assistant</h1>
         {isLoading ? (
           <p>Loading...</p>

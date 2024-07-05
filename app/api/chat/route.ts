@@ -30,16 +30,15 @@ json
       "price": 00.00,
       "category": "Category",
       "link": "https://example.com/product"
-      "image": "https://example.com/image.jpg"
       "sold" : "Number of Items sold as integer"
-      "discount" : "Percentage of discount give (if none give default 0)"
-      "rating" : "0 out of 0 stars"
+      "discount" : "0%"
+      "rating" : "0.0"
     },
     // ... more products
   ]
 }
 
-Provide 5 product recommendations that best fit the user's profile and preferences. Ensure all fields are filled for each product.
+Provide 16 product recommendations that best fit the user's profile and preferences. Ensure all fields are filled for each product.
 `;
 
 export async function POST(req: NextRequest) {
