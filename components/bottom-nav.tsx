@@ -2,7 +2,7 @@ import { PlusButton } from "./plus-button"
 
 export  const BottomNav = () => {
     return (
-        <nav className="fixed bottom-0 w-full">
+        <nav className="fixed bottom-0 w-full bg-black">
             <ul className="flex justify-around items-center">
                 <li>
                     <div>
