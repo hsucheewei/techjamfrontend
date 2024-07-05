@@ -1,4 +1,5 @@
 import { BottomNav } from "@/components/bottom-nav";
+import { Siderbar } from "@/components/sidebar";
 
 export default function RootLayout({
     children,
@@ -7,6 +8,7 @@ export default function RootLayout({
   }>) {
     return (
       <div className="mb-16">
+        <Siderbar />
         {children}
         <BottomNav />
       </div>
