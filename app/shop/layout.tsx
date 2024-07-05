@@ -10,7 +10,6 @@ export default function RootLayout({
     return (
       <div className="mb-16">
         <Tab />
-        <Siderbar />
         {children}
         <BottomNav />
       </div>
