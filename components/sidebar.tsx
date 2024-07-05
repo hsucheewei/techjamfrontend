@@ -1,5 +1,7 @@
 export const Siderbar = () => {
     return (
-        <aside></aside>
+        <aside>
+            hello world
+        </aside>
     )
 }
