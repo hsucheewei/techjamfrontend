@@ -6,8 +6,8 @@ This repository contains a Next.js project configured to run in a Docker contain
 
 Before you begin, ensure you have met the following requirements:
 
-- Docker and Docker Compose are installed on your machine.
-- Git is installed on your machine.
+- [Docker](https://docs.docker.com/get-docker/) and [Docker Compose](https://docs.docker.com/compose/install/) are installed on your machine.
+- [Git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) is installed on your machine.
 
 ## Getting Started
 
@@ -31,7 +31,7 @@ Follow these steps to get your development environment up and running.
 1. Create a '.env' file in the root directory
 2. Add any neccesary env variables like
     ```env
-    OPENAI_API_KEY=your_openai_api_key
+    NEXT_PUBLIC_OPENAI_API_KEY="NEXT_PUBLIC_OPENAI_API_KEY"
     ```
 
 ### Build and Run the Docker Container

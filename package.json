@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@ai-sdk/openai": "^0.0.34",
+    "@fortawesome/free-solid-svg-icons": "^6.5.2",
+    "@fortawesome/react-fontawesome": "^0.2.2",
     "@gptscript-ai/gptscript": "^0.9.1",
     "@shadcn/ui": "^0.0.4",
     "ai": "^3.2.16",
