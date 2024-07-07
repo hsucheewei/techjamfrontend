@@ -1,5 +1,4 @@
 'use client';
-
 import React, { useEffect, useState } from 'react';
 
 const TestingPage: React.FC = () => {
@@ -8,29 +7,18 @@ const TestingPage: React.FC = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const userInfo = {
-        age: '20',
-        gender: 'male',
-        location: 'singapore',
-        purchaseHistory: 'mouse and keyboard',
-        priceRange: '20 to 50',
-        categories: 'tech',
-      };
-
       setIsLoading(true);
-
       try {
         const response = await fetch('/api/chat', {
-          method: 'POST',
+          method: 'GET',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(userInfo),
         });
-
+        
         if (!response.ok) {
           const errorData = await response.json();
           throw new Error(errorData.error || 'An error occurred while fetching the data.');
         }
-
+        
         const data = await response.json();
         setResponseText(data.text);
       } catch (error: any) {
