@@ -4,7 +4,7 @@ import { fetchProducts } from "@/lib/fetch";
 import { IProducts } from "@/lib/types";
 import { useEffect, useState } from "react";
 
-export default async function ShopPage() {
+export default function ShopPage() {
   const [products, setProducts] = useState<IProducts>([]);
   const [isLoading, setIsLoading] = useState(false);
 
