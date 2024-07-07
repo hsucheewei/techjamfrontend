@@ -61,9 +61,11 @@ export async function GET() {
       prompt: filledPrompt,
     });
 
+    const jsonResponse = JSON.parse(text);
+
     console.log('Generated text:', text);
 
-    return NextResponse.json({ text });
+    return NextResponse.json({ jsonResponse });
   } catch (error: any) {
     console.error('API route error:', error);
     return NextResponse.json({ error: error.message || 'An unexpected error occurred' }, { status: 500 });
