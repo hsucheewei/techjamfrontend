@@ -37,7 +37,10 @@ Please provide product recommendations in the following JSON format:
   ]
 }
   
-Provide 16 product recommendations that best fit the user's profile and preferences. Ensure all fields are filled for each product.
+Provide 6 product recommendations that best fit the user's profile and preferences. Ensure all fields are filled for each product., only post the JSON container
+once with no repeats or duplicates to mess with the JSON format. Make sure the output is in JSON format in a way that i will be able to copy and paste it into
+my JSON file with no issues.
+
 `;
 
 export async function GET() {
@@ -61,11 +64,11 @@ export async function GET() {
       prompt: filledPrompt,
     });
 
-    const jsonResponse = JSON.parse(text);
+    //const jsonResponse = JSON.parse(text);
 
     console.log('Generated text:', text);
 
-    return NextResponse.json({ jsonResponse });
+    return NextResponse.json({ text });
   } catch (error: any) {
     console.error('API route error:', error);
     return NextResponse.json({ error: error.message || 'An unexpected error occurred' }, { status: 500 });
