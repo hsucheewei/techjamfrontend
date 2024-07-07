@@ -1,10 +1,40 @@
+"use client";
 import { Product } from "@/components/product";
-import { PRODUCTS } from "@/lib/constant";
 import { fetchProducts } from "@/lib/fetch";
-import dynamic from "next/dynamic";
+import { IProducts } from "@/lib/types";
+import { useEffect, useState } from "react";
 
 export default async function ShopPage() {
-  const products = await fetchProducts();
+  const [products, setProducts] = useState<IProducts>([]);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    const fetchProducts = async () => {
+      setIsLoading(true);
+      try {
+        const response = await fetch("/api/chat", {
+          method: "GET",
+          headers: { "Content-Type": "application/json" },
+        });
+
+        if (!response.ok) {
+          const errorData = await response.json();
+          throw new Error(
+            errorData.error || "An error occurred while fetching the data."
+          );
+        }
+
+        const data = (await response.json()) as IProducts;
+        setProducts(data);
+      } catch (error: any) {
+        console.error("Error:", error.message);
+      } finally {
+        setIsLoading(false);
+      }
+    };
+
+    fetchProducts();
+  }, []);
 
   const firstColumn = products.filter((_, index) => index % 2 === 0);
   const secondColumn = products.filter((_, index) => index % 2 === 1);
