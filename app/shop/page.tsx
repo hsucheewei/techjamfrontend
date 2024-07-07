@@ -1,5 +1,6 @@
 "use client";
 import { Product } from "@/components/product";
+import { placeholderImages } from "@/lib/constant";
 import { fetchProducts } from "@/lib/fetch";
 import { IProducts } from "@/lib/types";
 import { useEffect, useState } from "react";
@@ -12,7 +13,7 @@ export default function ShopPage() {
     const fetchProducts = async () => {
       setIsLoading(true);
       try {
-        const response = await fetch("/api/chat", {
+        const response = await fetch("/api/product", {
           method: "GET",
           headers: { "Content-Type": "application/json" },
         });
@@ -37,8 +38,18 @@ export default function ShopPage() {
     fetchProducts();
   }, []);
 
-  const firstColumn = products.filter((_, index) => index % 2 === 0);
-  const secondColumn = products.filter((_, index) => index % 2 === 1);
+  const firstColumn = products
+    .filter((_, index) => index % 2 === 0)
+    .map((product, index) => ({
+      ...product,
+      image: placeholderImages[(index * 2) % placeholderImages.length],
+    }));
+  const secondColumn = products
+    .filter((_, index) => index % 2 === 1)
+    .map((product, index) => ({
+      ...product,
+      image: placeholderImages[((index + 1) % 2) % placeholderImages.length],
+    }));
 
   return (
     <main>
