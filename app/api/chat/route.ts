@@ -20,7 +20,7 @@ Given the following information:
 - Price Range: {price_range}
 - Product Categories: {categories}
 Please provide product recommendations in the following JSON format:
-json
+
 {
   "products": [
     {
@@ -35,6 +35,7 @@ json
     // ... more products
   ]
 }
+  
 Provide 16 product recommendations that best fit the user's profile and preferences. Ensure all fields are filled for each product.
 `;
 
