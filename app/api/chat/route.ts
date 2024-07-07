@@ -28,6 +28,7 @@ Please provide product recommendations in the following JSON format:
       "price": 00.00,
       "category": "Category",
       "link": "https://example.com/product"
+      "image": "https://example.com/image.jpg"
       "sold" : "Number of Items sold as integer"
       "discount" : "0%"
       "rating" : "0.0"
