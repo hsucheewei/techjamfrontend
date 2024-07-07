@@ -1,0 +1,164 @@
+{
+  "products": [
+    {
+      "name": "Apple AirPods Pro",
+      "price": 249.0,
+      "category": "Electronics",
+      "link": "https://www.apple.com/airpods-pro/",
+      "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/MWP22?wid=1144&hei=1144&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1604346904000",
+      "sold": 10000,
+      "discount": "10%",
+      "rating": "4.8"
+    },
+    {
+      "name": "Kindle Paperwhite",
+      "price": 129.99,
+      "category": "Electronics",
+      "link": "https://www.amazon.com/Kindle-Paperwhite-Waterproof-Storage-Ad-Supported/dp/B07CXG6C9W",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/61eAqG8JGVL._AC_SL1000_.jpg",
+      "sold": 5000,
+      "discount": "5%",
+      "rating": "4.6"
+    },
+    {
+      "name": "Levi's Women's 721 High Rise Skinny Jeans",
+      "price": 49.99,
+      "category": "Fashion",
+      "link": "https://www.levi.com/US/en_US/clothing/women/jeans/721-high-rise-skinny-jeans/p/188820134",
+      "image": "https://www.levi.com/dw/image/v2/AAJE_PRD/on/demandware.static/-/Sites-levi-products/default/dw7b3b3b3b/images/hi-res/188820134-front-pdp.jpg?sw=2000",
+      "sold": 8000,
+      "discount": "15%",
+      "rating": "4.7"
+    },
+    {
+      "name": "Samsung Galaxy Watch Active2",
+      "price": 249.99,
+      "category": "Electronics",
+      "link": "https://www.samsung.com/us/mobile/wearables/galaxy-watch-active2/",
+      "image": "https://image-us.samsung.com/SamsungUS/home/wearables/smartwatches/pdp/sm-r830nzkaxar/gallery/SM-R830NZKAXAR_001_Front_Black.jpg?$product-details-jpg$",
+      "sold": 3000,
+      "discount": "8%",
+      "rating": "4.5"
+    },
+    {
+      "name": "Ray-Ban Classic Aviator Sunglasses",
+      "price": 154.0,
+      "category": "Fashion",
+      "link": "https://www.ray-ban.com/usa/sunglasses/RB3025%20UNISEX%20002-aviator%20classic-gold/805289602057",
+      "image": "https://www.ray-ban.com/on/demandware.static/-/Sites-RB-Library/default/dw7b3b3b3b/images/hi-res/3025_001_57-14_3P.jpg",
+      "sold": 6000,
+      "discount": "0%",
+      "rating": "4.8"
+    },
+    {
+      "name": "Apple Watch Series 6",
+      "price": 399.0,
+      "category": "Electronics",
+      "link": "https://www.apple.com/apple-watch-series-6/",
+      "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/M00X3?wid=1144&hei=1144&fmt=jpeg&qlt=95&op_usm=0.5,0.5&.v=1604346904000",
+      "sold": 7000,
+      "discount": "0%",
+      "rating": "4.9"
+    },
+    {
+      "name": "Adidas Women's Cloudfoam Pure Running Shoe",
+      "price": 70.0,
+      "category": "Fashion",
+      "link": "https://www.adidas.com/us/cloudfoam-pure-shoes/F34677.html",
+      "image": "https://assets.adidas.com/images/h_840,f_auto,q_auto:sensitive,fl_lossy/0b1b1b1b1b1b4b1b9b1b/Cloudfoam_Pure_Shoes_Black_F34677_01_standard.jpg",
+      "sold": 9000,
+      "discount": "20%",
+      "rating": "4.6"
+    },
+    {
+      "name": "Amazon Echo Dot (4th Gen)",
+      "price": 49.99,
+      "category": "Electronics",
+      "link": "https://www.amazon.com/Echo-Dot-4th-Gen/dp/B084DWH5XV",
+      "image": "https://images-na.ssl-images-amazon.com/images/I/61EXU8BuGZL._AC_SL1000_.jpg",
+      "sold": 12000,
+      "discount": "10%",
+      "rating": "4.7"
+    },
+    {
+      "name": "Calvin Klein Women's Modern Cotton Bralette",
+      "price": 28.0,
+      "category": "Fashion",
+      "link": "https://www.calvinklein.us/en/modern-cotton-bralette-0000F3785E.html",
+      "image": "https://www.calvinklein.us/dw/image/v2/AAJE_PRD/on/demandware.static/-/Sites-ck-products/default/dw7b3b3b3b/images/hi-res/0000F3785E_001_1.jpg?sw=2000",
+      "sold": 10000,
+      "discount": "15%",
+      "rating": "4.5"
+    },
+    {
+      "name": "Sony WH-1000XM4 Wireless Noise-Cancelling Headphones",
+      "price": 348.0,
+      "category": "Electronics",
+      "link": "https://www.sony.com/electronics/headband-headphones/wh-1000xm4",
+      "image": "https://www.sony.com/image/7b1b1b1b1b1b4b1b9b1b/WH1000XM4_Gallery_1.jpg",
+      "sold": 5000,
+      "discount": "5%",
+      "rating": "4.9"
+    },
+    {
+      "name": "Michael Kors Jet Set Travel Large Chain Shoulder Tote",
+      "price": 298.0,
+      "category": "Fashion",
+      "link": "https://www.michaelkors.com/jet-set-travel-large-chain-shoulder-tote/_/R-US_30S9G0LL3L",
+      "image": "https://www.michaelkors.com/on/demandware.static/-/Sites-pax-global-library/default/dw7b3b3b3b/images/hi-res/30S9G0LL3L-001_1.jpg",
+      "sold": 4000,
+      "discount": "0%",
+      "rating": "4.7"
+    },
+    {
+      "name": "Fitbit Charge 4 Fitness and Activity Tracker",
+      "price": 149.95,
+      "category": "Electronics",
+      "link": "https://www.fitbit.com/global/us/products/trackers/charge4",
+      "image": "https://www.fitbit.com/global/us/products/trackers/charge4/images/hero-black.jpg",
+      "sold": 6000,
+      "discount": "10%",
+      "rating": "4.5"
+    },
+    {
+      "name": "UGG Women's Classic Short II Boot",
+      "price": 169.95,
+      "category": "Fashion",
+      "link": "https://www.ugg.com/women-boots-classic-boots/classic-short-ii-boot/1016223.html",
+      "image": "https://www.ugg.com/dw/image/v2/AAJE_PRD/on/demandware.static/-/Sites-masterCatalogUgg/default/dw7b3b3b3b/images/hi-res/1016223_CHE_01.jpg?sw=2000",
+      "sold": 7000,
+      "discount": "0%",
+      "rating": "4.8"
+    },
+    {
+      "name": "Bose SoundLink Color Bluetooth Speaker II",
+      "price": 129.0,
+      "category": "Electronics",
+      "link": "https://www.bose.com/en_us/products/speakers/portable_speakers/soundlink-color.html#v=soundlink_color_ii_soft_black",
+      "image": "https://assets.bose.com/content/dam/Bose_DAM/Web/consumer_electronics/global/products/speakers/soundlink_color_ii/product_silo_images/soundlink_color_ii_soft_black_EC_hero.psd/_jcr_content/renditions/cq5dam.web.320.320.png",
+      "sold": 8000,
+      "discount": "5%",
+      "rating": "4.6"
+    },
+    {
+      "name": "Kate Spade New York Women's Margaux Large Satchel",
+      "price": 398.0,
+      "category": "Fashion",
+      "link": "https://www.katespade.com/products/margaux-large-satchel/PXRUA146.html",
+      "image": "https://www.katespade.com/on/demandware.static/-/Sites-ksny-master-catalog/default/dw7b3b3b3b/images/hi-res/PXRUA146_001.jpg",
+      "sold": 3000,
+      "discount": "0%",
+      "rating": "4.7"
+    },
+    {
+      "name": "Apple iPad Air (4th Gen)",
+      "price": 499.0,
+      "category": "Electronics",
+      "link": "https://www.apple.com/ipad-air/",
+      "image": "https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/ipad-air-select-wifi-green-202009?wid=940&hei=1112&fmt=png-alpha&qlt=80&.v=1599934485000",
+      "sold": 4000,
+      "discount": "0%",
+      "rating": "4.9"
+    }
+  ]
+}

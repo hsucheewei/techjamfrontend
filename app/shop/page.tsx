@@ -4,7 +4,7 @@ import { fetchProducts } from "@/lib/fetch";
 import { IProducts } from "@/lib/types";
 import { useEffect, useState } from "react";
 
-export default async function ShopPage() {
+export default function ShopPage() {
   const [products, setProducts] = useState<IProducts>([]);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -24,7 +24,8 @@ export default async function ShopPage() {
           );
         }
 
-        const data = (await response.json()) as IProducts;
+        const res = await response.json();
+        const data = res.products as IProducts;
         setProducts(data);
       } catch (error: any) {
         console.error("Error:", error.message);
