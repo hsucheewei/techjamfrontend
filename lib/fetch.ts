@@ -1,7 +1,8 @@
 import { IProducts } from "./types";
 
 export const fetchProducts = async () => {
-  const response = await fetch("/api/chat", {
+  // @ts-ignore
+  const response = await fetch(process.env.VERCEL_URL + "/api/chat", {
     method: "GET",
     headers: { "Content-Type": "application/json" },
   });
