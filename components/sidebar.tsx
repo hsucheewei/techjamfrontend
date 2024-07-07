@@ -14,9 +14,9 @@ export const Sidebar = () => {
 
   return (
     <div>
-      <aside className="p-4 bg-black text-white flex justify-end items-center">
+      <aside className="p-1 bg-black text-white flex justify-end items-center fixed top-12 w-full">
         <button onClick={toggleFilter} className="px-4 py-2 text-white rounded-md flex items-center">
-          <Image src={filterlogo} width={0} height={0} alt="Filter Logo" className="h-8 w-8 mr-2 object-contain" />
+          <Image src={filterlogo} width={0} height={0} alt="Filter Logo" className="h-6 w-6 mr-2 object-contain" />
         </button>
       </aside>
 
