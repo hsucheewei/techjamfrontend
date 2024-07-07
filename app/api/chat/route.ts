@@ -1,6 +1,7 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import { createOpenAI } from '@ai-sdk/openai';
 import { generateText } from 'ai';
+import userProfiles from '@/data/user_profiles.json';
 
 const openai = createOpenAI({
   apiKey: process.env.NEXT_PUBLIC_OPENAI_API_KEY,
@@ -10,8 +11,7 @@ const openai = createOpenAI({
 export const runtime = 'edge';
 
 const promptTemplate = `
-You are an AI shopping assistant. Your task is to recommend products based on the user's profile and purchase history. 
-
+You are an AI shopping assistant. Your task is to recommend products based on the user's profile and purchase history.
 Given the following information:
 - Age: {age}
 - Gender: {gender}
@@ -19,9 +19,7 @@ Given the following information:
 - Purchase History: {purchase_history}
 - Price Range: {price_range}
 - Product Categories: {categories}
-
 Please provide product recommendations in the following JSON format:
-
 json
 {
   "products": [
@@ -37,23 +35,22 @@ json
     // ... more products
   ]
 }
-
 Provide 16 product recommendations that best fit the user's profile and preferences. Ensure all fields are filled for each product.
 `;
 
-export async function POST(req: NextRequest) {
+export async function GET() {
   try {
-    const { age, gender, location, purchaseHistory, priceRange, categories } = await req.json();
-
-    console.log('Received request with the following data:', { age, gender, location, purchaseHistory, priceRange, categories });
+    // For this example, we'll use the first user profile
+    // You might want to implement a way to select a specific user
+    const user = userProfiles[0];
 
     const filledPrompt = promptTemplate
-      .replace('{age}', age)
-      .replace('{gender}', gender)
-      .replace('{location}', location)
-      .replace('{purchaseHistory}', purchaseHistory)
-      .replace('{priceRange}', priceRange)
-      .replace('{categories}', categories);
+      .replace('{age}', user.age)
+      .replace('{gender}', user.gender)
+      .replace('{location}', user.location)
+      .replace('{purchase_history}', user.purchaseHistory.join(', '))
+      .replace('{price_range}', user.priceRange)
+      .replace('{categories}', user.categories.join(', '));
 
     console.log('Filled prompt:', filledPrompt);
 

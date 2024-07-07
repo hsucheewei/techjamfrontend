@@ -1,0 +1,10 @@
+[
+    {
+      "age": "30",
+      "gender": "female",
+      "location": "New York",
+      "purchaseHistory": ["Smartphone", "Laptop", "Headphones"],
+      "priceRange": "$100-$500",
+      "categories": ["Electronics", "Fashion", "Books"]
+    }
+  ]
